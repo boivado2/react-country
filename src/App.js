@@ -15,8 +15,7 @@ class App extends Component {
     state = {
         countries: [],
         country: {},
-        loading: false,
-        darkMode: false
+        loading: false
     };
 
     // get all country
@@ -63,18 +62,10 @@ class App extends Component {
         this.setState({ countries: responseData });
     };
 
-    toggleDarkTheme = () => {
-        this.setState({ darkMode: true });
-    };
-
     render() {
         return (
             <Router>
-                <div
-                    className={
-                        this.toggleDarkTheme ? 'dark-theme' : 'ligth-mode'
-                    }
-                >
+                <div>
                     <Navbar />
                     <Switch>
                         <Route

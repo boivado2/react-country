@@ -5,7 +5,7 @@ const Country = ({ country: { name, capital, flag, region, population } }) => {
     return (
         <div className="card lead" style={{ width: '19rem' }}>
             <img src={flag} alt="" className="card-img-top" />
-            <div className="card-body p-2">
+            <div>
                 <h5 className="text-left">Name: {name}</h5>
                 <p className="card-text text-left">Population: {population}</p>
                 <p className="card-text  text-left">Region: {region}</p>
