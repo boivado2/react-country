@@ -19,7 +19,8 @@ export class CountryDetails extends Component {
             timezones,
             topLevelDomain,
             nativeName,
-            borders
+            borders,
+            languages
         } = this.props.country;
 
         return (
@@ -36,35 +37,16 @@ export class CountryDetails extends Component {
                         <i className="fas fa-arrow-left"></i>Back
                     </Link>
                 </div>
-                <div
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
-                        gridGap: '2rem',
-                        textAlign: 'start',
-                        width: '80%',
-                        margin: '2rem auto',
-                        fontSize: '16px'
-                    }}
-                >
+                <div className="grid-2">
                     <img
                         src={flag}
                         className="card-img-top"
                         style={{ width: '100%', height: '100%' }}
                         alt=""
                     />
-                    <div className="text-sec">
+                    <div className="text-sec lead">
                         <h1>{name}</h1>
-                        <div
-                            className="text-content"
-                            style={{
-                                display: 'grid',
-                                gridTemplateColumns: '1fr 1fr',
-                                gridGap: '1rem',
-                                textAlign: 'start',
-                                fontSize: '1rem'
-                            }}
-                        >
+                        <div className="text-content grid-2">
                             <div className="text-1">
                                 <p>Native Name: {nativeName}</p>
                                 <p>Population: {population}</p>

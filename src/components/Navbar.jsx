@@ -3,9 +3,9 @@ import React from 'react';
 import Darktheme from '../layout/Darktheme';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ toggleDarkTheme, darkMode }) => {
     return (
-        <nav className="navbar navbar-light bg-light row">
+        <nav className="navbar navbar-light bg-dark row">
             <div className="col">
                 <a class="navbar-brand">Find Anywhere?</a>
             </div>

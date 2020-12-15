@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Country = ({ country: { name, capital, flag, region, population } }) => {
     return (
-        <div className="card" style={{ width: '19rem' }}>
+        <div className="card lead" style={{ width: '19rem' }}>
             <img src={flag} alt="" className="card-img-top" />
             <div className="card-body p-2">
                 <h5 className="text-left">Name: {name}</h5>
@@ -15,10 +15,9 @@ const Country = ({ country: { name, capital, flag, region, population } }) => {
                         textDecoration: 'none',
                         display: 'block',
                         width: '100%',
-                        marginBottom: '0',
-                        paddingBottom: '0'
+                        marginTop: '1rem'
                     }}
-                    className="btn btn-light"
+                    className="btn btn-dark"
                     to={`country/${name}`}
                 >
                     More Details <i className="fas fa-arrow-right"></i>

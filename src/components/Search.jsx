@@ -15,31 +15,18 @@ const Search = ({ onSearch, onSelect }) => {
     };
 
     return (
-        <div
-            className="input-group container "
-            style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                alignContent: 'center',
-                alignItems: 'center',
-                textAlign: 'end'
-            }}
-        >
+        <div className="container grid-2">
             <input
                 type="text"
                 placeholder="Search Country"
-                style={{ margin: '2rem 0', width: '50%' }}
                 value={text}
                 name="text"
                 onChange={handleChangeText}
-                className="form-control"
             />
-            <select
-                onChange={handleSelect}
-                value={value}
-                style={{ margin: '2rem 0', width: '50%' }}
-                className="form-control"
-            >
+            <select onChange={handleSelect} value={value}>
+                <option defaultValue value="">
+                    Select By Region
+                </option>
                 <option value="Africa">Africa</option>
                 <option value="Americas">Americas</option>
                 <option value="Asia">Asia</option>

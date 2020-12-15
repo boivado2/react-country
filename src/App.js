@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
-import React, { Component } from 'react';
 import './App.css';
+// import 'bootstrap/dist/css/bootstrap.css';
+import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import Search from './components/Search';
-import Select from './components/Select';
 import AllCountry from './components/AllCountry';
 import CountryDetails from './components/CountryDetails';
 import About from './components/About';
@@ -16,9 +16,10 @@ class App extends Component {
         countries: [],
         country: {},
         loading: false,
-        text: ''
+        darkMode: false
     };
 
+    // get all country
     async componentDidMount() {
         this.setState({ loading: true });
 
@@ -31,6 +32,7 @@ class App extends Component {
         this.setState({ countries: responseData, loading: false });
     }
 
+    // search fot country
     onSearch = async (country) => {
         const response = await axios.get(
             `https://restcountries.eu/rest/v2/name/${country}`
@@ -40,6 +42,7 @@ class App extends Component {
         this.setState({ countries: responseData });
     };
 
+    // get single country details
     getCountry = async (country) => {
         const response = await axios.get(
             `https://restcountries.eu/rest/v2/name/${country}`
@@ -49,6 +52,7 @@ class App extends Component {
         this.setState({ country: responseData[0] });
     };
 
+    // select by Region
     handleSelect = async (value) => {
         console.log(value);
         const response = await axios.get(
@@ -59,10 +63,18 @@ class App extends Component {
         this.setState({ countries: responseData });
     };
 
+    toggleDarkTheme = () => {
+        this.setState({ darkMode: true });
+    };
+
     render() {
         return (
             <Router>
-                <div className="App">
+                <div
+                    className={
+                        this.toggleDarkTheme ? 'dark-theme' : 'ligth-mode'
+                    }
+                >
                     <Navbar />
                     <Switch>
                         <Route
